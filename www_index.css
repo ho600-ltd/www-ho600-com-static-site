@@ -1,0 +1,83 @@
+/*
+    Document   : www_index
+    Created on : 2012/2/13, 下午 04:15:53
+    Author     : hoamon
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    width: 960px;
+    margin: 15px auto;
+    /*background: #333;*/
+}
+
+h1 {
+    color: black;
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
+p.warning {
+    color: red;
+    background-color: black;
+    border: solid 1px red;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 40px;
+}
+
+p, li {
+    line-height: 20px;
+}
+
+p#powerby {
+    background-color: white;
+    border-radius: 5px;
+    height: 80px;
+}
+p#powerby a {
+    text-decoration: none;
+}
+p#powerby img {
+    margin-top: 8px;
+}
+
+header#page_header {
+    width: 100%;
+}
+
+header#page_header nav ul, #page_footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header#page_header nav ul li, #page_footer nav ul li {
+    display: inline;
+    margin: 0 20px 0 0;
+    padding: 0;
+}
+
+header#page_header nav ul li a, #page_footer nav ul li a{
+    color: black;
+}
+
+#page_content {
+    min-height: 700px;
+}
+
+footer#page_footer {
+    clear: both;
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: black;
+}
