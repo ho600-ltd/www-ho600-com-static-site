@@ -34,7 +34,7 @@ Following are some templates suitable for building "About us" section:
 
 * Photo and introduction 
 
-![U1](sample_image/Urban.png)
+![U1](sample_image/urban.png)
 
 * Photo and brief
 
