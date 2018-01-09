@@ -1,0 +1,4 @@
+{
+    "DEPLOY_TIME": "{{ datetime }}",
+    "COMMIT": "{{ commit_hash }}"
+}
