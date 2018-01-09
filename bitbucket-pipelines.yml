@@ -17,5 +17,5 @@ pipelines:
             - cp -rf __version__.json index.html www_index.css www_index.js gpg media html/
             - aws s3 cp --recursive html s3://www.ho600.com/
             - sed -e "s/{{ datetime }}/`date \"+%Y-%m-%d %H:%M:%S\"`/g" pipeline-messages.json > pipeline-messages.json
-            - sed -e "s%{{ commit_hash }}%${BITBUCKET_COMMIT}%g" pipeline-messages.json > pipeline-messages.json
+            - sed -e "s/{{ commit_hash }}/${BITBUCKET_COMMIT}/g" pipeline-messages.json > pipeline-messages.json
             - aws ses send-email --region us-west-2 --from service@ho600.com --destination file://pipeline-destination.json --message file://pipeline-messages.json
