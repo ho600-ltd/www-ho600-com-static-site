@@ -11,7 +11,7 @@ pipelines:
       - step:
           script: # Modify the commands below to build your repository.
             - pip install "awscli>=1.11,<1.12"
-            - sed -i -e "s/{{ datetime }}/`date \"+%Y-%m-%d %H:%M:%S\"`/g" __version__.json
+            - sed -i -e "s/{{ datetime }}/`date \"+%Y-%m-%d %H:%M:%S%z\"`/g" __version__.json
             - sed -i -e "s%{{ commit_hash }}%${BITBUCKET_COMMIT}%g" __version__.json
             - mkdir html
             - cp -rf __version__.json index.html www_index.css www_index.js gpg media html/
