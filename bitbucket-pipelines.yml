@@ -17,8 +17,10 @@ pipelines:
             - cp -rf __version__.json index.html www_index.css www_index.js gpg media html/
             - aws s3 cp --recursive html s3://www.ho600.com/
             - aws s3 sync --delete html/gpg/ s3://www.ho600.com/gpg
+            - cat pipeline-messages.json
             - sed -e "s/{{ datetime }}/`date \"+%Y-%m-%d %H:%M:%S\"`/g" pipeline-messages.json > pipeline-messages.json
-            - sed -e "s/{{ commit_hash }}/${BITBUCKET_COMMIT}/g" pipeline-messages.json > pipeline-messages.json
             - cat pipeline-destination.json
             - cat pipeline-messages.json
+            - sleep 1
+            - sed -e "s/{{ commit_hash }}/${BITBUCKET_COMMIT}/g" pipeline-messages.json > pipeline-messages.json
             - aws ses send-email --destination file://pipeline-destination.json --message file://pipeline-messages.json --region us-west-2 --from service@ho600.com 
