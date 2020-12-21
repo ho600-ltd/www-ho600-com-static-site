@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+aws --profile XXX --region us-west-2 codebuild start-build --project-name s3-cp-static-files-to-www-ho600-com
+aws --profile XXX --region us-west-2 codebuild list-builds-for-project --project-name s3-cp-static-files-to-www-ho600-com
+aws --profile XXX --region us-west-2 codebuild batch-get-builds --ids s3-cp-static-files-to-www-ho600-com:119a7cc5-9f3c-497b-a175-d9f60dedba97
